@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 class PetImage extends StatelessWidget {
   const PetImage({
     Key key,
+    @required this.urlImage,
   }) : super(key: key);
+
+  final String urlImage;
 
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: 1,
+      tag: urlImage,
       child: Align(
         alignment: Alignment.topCenter,
-        child: Image.asset('assets/images/pet-cat2.png'),
+        child: Image.asset(urlImage),
       ),
     );
   }

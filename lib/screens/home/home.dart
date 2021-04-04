@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_ui/models/cat.dart';
 import 'package:pet_ui/screens/detail/detail.dart';
 import 'components/custom_app_bar.dart';
 import 'components/pet_card.dart';
@@ -65,28 +66,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 30,
                       ),
                       const PetCategories(),
-                      PetCard(
-                        imageUrl: 'assets/images/pet-cat2.png',
-                        cardColor: Colors.blueGrey[300],
-                        tapEvent: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const DetailScreen()));
-                        },
-                      ),
-                      PetCard(
-                        imageUrl: 'assets/images/pet-cat1.png',
-                        cardColor: Colors.orange[200],
-                        tapEvent: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const DetailScreen()));
-                        },
-                      ),
+                      for (var cat in cats)
+                        PetCard(
+                          cat: cat,
+                          tapEvent: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        DetailScreen(cat: cat)));
+                          },
+                        )
                     ],
                   ),
                 ),
