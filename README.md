@@ -1,6 +1,3 @@
-# pet_ui
- Diseño UI generado en Flutter sobre app de mascotas
-
 # Pet UI App
  Aplicación mobile hecha en Flutter sobre app de mascotas con menu sidebar animado.
  
